@@ -243,7 +243,7 @@
                 <plugin>
                     <groupId>net.nicoulaj.maven.plugins</groupId>
                     <artifactId>checksum-maven-plugin</artifactId>
-                    <version>1.9</version>
+                    <version>1.10-SNAPSHOT</version>
                     <executions>
                         <execution>
                             <goals>
@@ -255,6 +255,9 @@
                                 </algorithms>
                                 <!-- make sure to attach to also upload to staging repo (https://issues.apache.org/jira/browse/INFRA-14923) -->
                                 <attachChecksums>true</attachChecksums>
+                                <!-- generate checksums for main artifact and souce-release artifact  -->
+                                <includeClassifiers>source-release</includeClassifiers>
+                                <excludeMainArtifact>false</excludeMainArtifact>
                             </configuration>
                         </execution>
                     </executions>
